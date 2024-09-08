@@ -6,13 +6,14 @@ import Image from "next/image";
 import { useContext } from "react";
 import CartContext from "./store/CartContext";
 
-
-
 export default function Header() {
-
-    let cartctx = useContext(CartContext);
+    const cartctx = useContext(CartContext);
     console.log("manya", cartctx);
-    const totalItems = cartctx.items.reduce((totalNo, item) => totalNo + item.quantity, 0);
+
+    // Ensure cartctx.items is defined and is an array before calling reduce
+    const totalItems = Array.isArray(cartctx.items)
+        ? cartctx.items.reduce((totalNo, item) => totalNo + item.quantity, 0)
+        : 0;
 
     return (
         <header className={classes.header}>
