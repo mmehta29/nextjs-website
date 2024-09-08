@@ -1,0 +1,12 @@
+.background {
+   align-items: center;
+   justify-content: center;
+   background-size:contain;
+   width: 100%;
+  height: 100vh;
+  display:flex;
+  background-position: center;
+
+  }
+  
+  
