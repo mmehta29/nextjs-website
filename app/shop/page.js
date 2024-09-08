@@ -3,12 +3,7 @@ import Header from "@/components/header";
 import ProductsGrid from "@/components/products/products-grid";
 import { CartContextProvider } from "@/components/store/CartContext";
 import { getProducts, getProductsByCategory } from "@/lib/products";
-import Link from "next/link";
-import InputSearch from "@/components/search";
-export default function ShopContent({ searchParams }) {
-
-    const query = searchParams?.query || '';
-    const categories = getProductsByCategory();
+export default function ShopContent() {
 
     const products = getProducts();
     return (
