@@ -19,7 +19,7 @@ export default function Header() {
             <div className={classes.name}>
                 <Link href="/" className={classes.logo}>
                     <Image src={logo} alt="logo" width="50" height="50" priority />
-                    Manya's Ecommerce
+                    JewelBox
                 </Link>
             </div>
             <nav className={classes.nav}>
