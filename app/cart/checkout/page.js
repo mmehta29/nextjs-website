@@ -1,9 +1,9 @@
 import Checkout from "@/components/checkout";
 
-
-export default function CheckoutCart() {
+export default function ChecoutPage() {
 
     return (
         <Checkout />
+
     );
 }

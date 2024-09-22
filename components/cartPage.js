@@ -3,7 +3,8 @@
 import { useContext } from "react";
 import CartContext from "./store/CartContext";
 import styles from './cartPage.module.css';
-import Link from 'next/link';
+
+import axios from "axios";
 
 export default function CartPage() {
     let cartctx = useContext(CartContext);
@@ -27,6 +28,22 @@ export default function CartPage() {
         return <p className={styles.empty}>Your cart is empty.</p>;
     }
 
+    const handleCheckout = async () => {
+        const items = cartctx.items.map(item => ({
+            title: item.title,
+            price: item.price,
+            quantity: item.quantity
+        }));
+
+        try {
+            const res = await axios.post('/api/checkout', { items });
+            window.location = res.data.sessionURL;
+        } catch (err) {
+            console.error(err);
+            alert("An error occurred during checkout. Please try again.");
+        }
+    };
+
     return (
         <main className={styles.box}>
             <div className={styles.container}>
@@ -49,9 +66,7 @@ export default function CartPage() {
                     Total: ${cartTotal.toFixed(2)}
                 </p>
                 <p>
-                    <Link href="/cart/checkout">
-                        <button className={styles.clearButton}>Checkout</button>
-                    </Link>
+                    <button onClick={handleCheckout} className={styles.clearButton}>Checkout</button>
                 </p>
                 <button onClick={handleClearCart} className={styles.clearButton}>Clear Cart</button>
             </div>
