@@ -52,3 +52,28 @@
   {
     border-radius: 50%;
   }
+
+  .button {
+    background-color: #d4c882; /* A pink color that complements the styling you prefer */
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #696809; /* Darker pink on hover */
+  }
+  
+  .button:active {
+    background-color: #696809; /* Even darker pink when clicked */
+    transform: scale(0.98); /* Slight scale down when button is pressed */
+  }
+  

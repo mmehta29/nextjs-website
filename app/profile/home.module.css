@@ -1,0 +1,66 @@
+.hero {
+    text-align: center;
+    font-size: 3rem;
+    color: #d4c882; /* Similar to the pink in the image */
+  }
+  
+  .cta {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .cta a {
+    padding: 15px 30px;
+    background-color: #b89c6f; /* A gold tone */
+    border-radius: 50px;
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header {
+    background-color: #f9f9f9;
+    padding: 20px 10px;
+  }
+  .slideshow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    overflow: hidden;
+    width: 50%;               
+    border-radius: 2px;      
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for slideshow */
+  }
+  
+  .slideshow img {
+    width: 10%;               /* Make images fully fit the container */
+    height: auto;
+    object-fit: contain;          /* Ensure the images fit well */
+    transition: opacity 0.5s ease; /* Smooth transition for image change */
+  }
+  .buttonContainer {
+    display: flex;
+    justify-content: center;  /* Center horizontally */
+    align-items: center;      /* Ensure alignment for centering */
+    margin-top: 5px;         /* Adjust spacing between text and button */
+  }
+  
+  .buyNowButton {
+    display: inline-block;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #b89c6f;
+    color: white;
+    cursor: pointer;
+    border-radius: 30px;
+    padding: 10px 20px;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .buyNowButton:hover {
+    transform: scale(1.05); /* Button slightly enlarges on hover */
+  }

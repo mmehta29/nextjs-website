@@ -6,6 +6,9 @@ import Image from "next/image";
 import { useContext } from "react";
 import CartContext from "./store/CartContext";
 
+import { signOut } from "next-auth/react"
+// import { signOut } from "firebase/auth";
+// import { auth } from "@/app/firebase/config";
 export default function Header() {
     const cartctx = useContext(CartContext);
     console.log("manya", cartctx);
@@ -36,6 +39,13 @@ export default function Header() {
                     </li>
                 </ul>
             </nav>
+            <button
+                className={classes.button}
+                type="button" // This prevents default form submission behavior
+                onClick={() => signOut({ redirectTo: "/profile" })}
+            >
+                Sign out
+            </button>
         </header>
     );
 }

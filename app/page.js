@@ -1,27 +1,29 @@
-import ImageSlideshow from "@/components/images/image-slideshow";
-import Link from "next/link";
-import Background from "../components/background";
-import Header from "../components/header";
-import classes from "./page.module.css";
-import { CartContextProvider } from "@/components/store/CartContext";
-// import Image from 'next/image';
-import image1 from '@/assets/1.png';
+"use client";
+
+import { useSession } from "next-auth/react";
+import HomePageApplication from "./profile/home";
+import SignInPage from "./profile/page";
+
 export default function Home() {
+  const { data: session, status } = useSession();
+
+  // Check if the session is loading
+  if (status === "loading") {
+    return <div>Loading...</div>; // You can display a loading state
+  }
+
+  if (!session) {
+    return (
+      <>
+        <SignInPage />
+      </>
+    );
+  }
+
   return (
     <>
-      <Header />
-      <header>
-        <ImageSlideshow />
-        <div className={classes.hero}>
-          <h2>Support Local Everything</h2>
-        </div>
-
-        <div className={classes.buttonContainer}>
-          <Link href="/shop">
-            <button className={classes.buyNowButton}>Buy Now</button>
-          </Link>
-        </div>
-      </header>
+      <HomePageApplication />
     </>
   );
 }
+
